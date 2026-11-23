@@ -1,0 +1,26 @@
+### Salud
+GET http://localhost:8080/api/salud
+
+### Arbol
+GET http://localhost:8080/api/arbol
+
+### Historial
+GET http://localhost:8080/api/historial
+
+### Estadisticas globales
+GET http://localhost:8080/api/estadisticas
+
+### Estadisticas por estrategia
+GET http://localhost:8080/api/estadisticas/estrategias
+
+### Una falla controlada (worker B por defecto)
+POST http://localhost:8080/api/experimentos
+Content-Type: application/json
+
+{"estrategia":"one_for_one","cantidad":1}
+
+### Falla controlada sobre el worker A (version ampliada)
+POST http://localhost:8080/api/experimentos
+Content-Type: application/json
+
+{"estrategia":"rest_for_one","cantidad":1,"proceso":"sup_rest_for_one_a"}
